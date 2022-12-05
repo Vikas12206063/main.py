@@ -1,1 +1,48 @@
-print("hello world")
+import random                   #import library to select the random option for computer
+
+while True:                     #start of while loop till the user wants to continue 
+
+        str1 = input("Enter a choice(rock, paper, scissor): ")                      # First string input for the user to select the option
+        print("-----------------------------------------------------------")
+
+        str3 = ["Rock", "Paper", "Scissor"]                                         #Second string with the input option available for computer 
+        str2 = random.choice(str3)                                                  #Third string to save the random selected option of the computer 
+
+        print(f"\nyou chosse {str1}, computer chosse {str2}.\n")                    #print both the select option of the user and computer
+        print("-----------------------------------------------------------")        
+
+        if str1 == str2:                                                            #start of the if condition 
+                print(f"Both players selected{str1}.it's a tie!")
+                print("-----------------------------------------------------------")
+
+        elif str1 == "rock" or "Rock":                                                        
+                if str2 == "scissor" or "Scissor":
+                    print("Rock smashes scissor! you win!")
+                    print("-----------------------------------------------------------")
+                else:
+                    print("Paper covers rock! you lose.")
+                    print("-----------------------------------------------------------")
+
+        elif str1 == "paper" or "Paper":
+                if str2 == "rock":
+                    print("Paper covers rock! you win!")
+                    print("-----------------------------------------------------------")
+                else:
+                    print("Scissor cuts paper! you lose")
+                    print("-----------------------------------------------------------")
+
+        elif str1 == "scissor" or "Scissor":
+                if str2 == "paper":
+                    print("Scissor cuts paper! you win!")
+                    print("-----------------------------------------------------------")
+                else:
+                    print("Rock smashes scissor! you lose")
+                    print("-----------------------------------------------------------")
+        
+        str4 = input("Play again? (yes/no): ")                                                 
+        print("-----------------------------------------------------------")
+
+        if str4.lower() != "yes" or str4.upper() != "Yes":                                              
+             break                                         
+        else: 
+             print("OPS !! Wrong Option Selected. Try Again.")                                             
